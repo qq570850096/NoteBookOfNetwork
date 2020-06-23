@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">github.com/e421083458/gateway_demo/demo/test_exam/Triangle.go (100.0%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package test_exam
+
+import (
+        "fmt"
+        "regexp"
+        "strconv"
+        "strings"
+)
+
+type Triangle struct {
+}
+
+func (Triangle) IsNum (str []byte) bool <span class="cov8" title="1">{
+        reg := regexp.MustCompile("^[-+]?(([0-9]+)([.]([0-9]+))?|([.]([0-9]+))?)$")
+        // 返回是否只有数字
+        return reg.Match(str)
+}</span>
+// 判断字符串是否含有"."分隔符
+func (Triangle) ContainsDot(str string) bool <span class="cov8" title="1">{
+        if strings.ContainsRune(str,'.') </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
+
+// 判断字符串是否为空
+func (Triangle) IsEmpty (str string) bool <span class="cov8" title="1">{
+        if len(str) == 0 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
+
+func (f Triangle) IsTriangle (str1,str2,str3 string) <span class="cov8" title="1">{
+        // 保证三边非空且都是整数，并且都是数字
+        IsNotEmpty,IsNum,NotContainDot := f.AllNotEmpty(str1,str2,str3),f.AllAreNum(str1,str2,str3),f.AllNotContainDot(str1,str2,str3)
+
+        if IsNum &amp;&amp; IsNotEmpty &amp;&amp; NotContainDot </span><span class="cov8" title="1">{
+                a,_ := strconv.Atoi(str1)
+                b,_ := strconv.Atoi(str2)
+                c,_ := strconv.Atoi(str3)
+                if !mustFit(a,b,c) </span><span class="cov8" title="1">{
+                        fmt.Println("这三边无法构成三角形")
+                }</span> else<span class="cov8" title="1"> {
+                        switch typeOfTriangle(a, b, c) </span>{
+                        case 1:<span class="cov8" title="1">
+                                fmt.Println("等边三角形")</span>
+                        case 2:<span class="cov8" title="1">
+                                fmt.Println("等腰三角形")</span>
+                        case 3:<span class="cov8" title="1">
+                                fmt.Println("直角三角形")</span>
+                        case 4:<span class="cov8" title="1">
+                                fmt.Println("普通三角形")</span>
+                        }
+                }
+        } else<span class="cov8" title="1"> {
+                if !IsNum </span><span class="cov8" title="1">{
+                        fmt.Println("输入中有错误字符")
+                }</span> else<span class="cov8" title="1"> if !IsNotEmpty </span><span class="cov8" title="1">{
+                        fmt.Println("数据不完整")
+                }</span> else<span class="cov8" title="1"> {
+                        fmt.Println("包含小数点")
+                }</span>
+        }
+}
+// 三角形三边条件
+func mustFit(a,b,c int) bool <span class="cov8" title="1">{
+        if a + b &lt;= c || a + c &lt;= b || b + c &lt;=a</span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+// 判定三角形类型 1 等边， 2 等腰，3 直角，4 普通
+func typeOfTriangle (a,b,c int) int <span class="cov8" title="1">{
+        if a == b &amp;&amp; b == c </span><span class="cov8" title="1">{
+                return 1
+        }</span> else<span class="cov8" title="1"> if a ==b || a ==c || b ==c </span><span class="cov8" title="1">{
+                return 2
+        }</span> else<span class="cov8" title="1"> if a*a + b*b == c*c || a*a + c*c == b*b || b*b+c*c == a*a </span><span class="cov8" title="1">{
+                return 3
+        }</span> else<span class="cov8" title="1"> {
+                return 4
+        }</span>
+}
+
+func (f Triangle) AllAreNum (str1,str2,str3 string) bool <span class="cov8" title="1">{
+        if f.IsNum([]byte(str1)) &amp;&amp; f.IsNum([]byte(str2)) &amp;&amp; f.IsNum([]byte(str3)) </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
+
+func (f Triangle) AllNotContainDot(str1,str2,str3 string) bool <span class="cov8" title="1">{
+        return !(f.ContainsDot(str1) || f.ContainsDot(str2) || f.ContainsDot(str3))
+}</span>
+
+func (f Triangle) AllNotEmpty (str1,str2,str3 string) bool <span class="cov8" title="1">{
+        return !(f.IsEmpty(str1) || f.IsEmpty(str2) || f.IsEmpty(str3))
+}</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>
