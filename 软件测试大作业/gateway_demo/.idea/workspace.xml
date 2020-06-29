@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="422f1120-fd79-4404-9337-8c2eed5260d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../17425037-刘永伦.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../17425037-刘永伦.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/NextDay/Header.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Header.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/NextDay/Header_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Header_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/NextDay/nextDay_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/NextDay/nextDay_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/test_exam/Triangle_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/test_exam/Triangle_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../移动开发/移动开发实验2.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../../移动开发/移动开发实验2.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../移动开发/移动开发实验3.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../../移动开发/移动开发实验3.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../移动开发/移动开发实验4.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../../移动开发/移动开发实验4.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../移动开发/移动开发实验5.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../../移动开发/移动开发实验5.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../移动开发/移动开发设计.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../移动开发/移动开发设计.docx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +143,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
