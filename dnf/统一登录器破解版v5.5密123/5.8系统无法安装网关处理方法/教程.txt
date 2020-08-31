@@ -1,1 +1,0 @@
-跟目录下的libmysqlclient.so.15文件手动复制到/usr/lib/目录
